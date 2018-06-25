@@ -1,3 +1,9 @@
 theme: jekyll-theme-cayman
 title: "Cornwall Hub"
 description: "Site for workshops organised at the University of Exeter, Penryn Campus, Cornwall"
+baseurl: ""
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
