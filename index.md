@@ -10,5 +10,14 @@ and more. We provide technical and analytical support for early career researche
 
 # Workshops
 
+**Penryn**
+
 * [R Basics]({{ site.baseurl }}{% link workshops/r-basics.md %})
-* [Introduction to Python]({{ site.baseurl }}{% link workshops/intro-to-python.md %})
+* [Introduction to Python (Penryn)]({{ site.baseurl }}{% link workshops/intro-to-python.md %})
+
+**Streatham**
+
+* [ImageJ GUI](imagej-gui)
+* [ImageJ Macros](imagej-macros)
+* [Introduction to Python](python-intro)
+* [Python for Data Analysis](python-data)
