@@ -13,7 +13,7 @@ and more. We provide technical and analytical support for early career researche
 **Penryn**
 
 * [R Basics]({{ site.baseurl }}{% link workshops/r-basics.md %})
-* [Introduction to Python (Penryn)]({{ site.baseurl }}{% link workshops/intro-to-python.md %})
+* [Introduction to Python]({{ site.baseurl }}{% link workshops/intro-to-python.md %})
 
 **Streatham**
 
