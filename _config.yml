@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
-title: "Cornwall Hub"
-description: "Site for workshops organised at the University of Exeter, Penryn Campus, Cornwall"
+title: "Exeter Data Analytics Hub"
+description: "Site for workshops organised at the University of Exeter"
 baseurl: ""
 markdown: kramdown
 plugins:
