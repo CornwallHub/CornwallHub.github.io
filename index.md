@@ -12,7 +12,6 @@ and more. We provide technical and analytical support for early career researche
 
 **Penryn**
 
-* [R Basics]({{ site.baseurl }}{% link workshops/r-basics.md %})
 * [Python for scientific research]({{ site.baseurl }}{% link workshops/intro-to-python.md %})
 
 **Streatham**
