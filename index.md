@@ -13,6 +13,7 @@ and more. We provide technical and analytical support for early career researche
 **Penryn**
 
 * [Python for scientific research]({{ site.baseurl }}{% link workshops/intro-to-python.md %})
+* [Introduction to R](IntroToR)
 
 **Streatham**
 
