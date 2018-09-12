@@ -10,7 +10,7 @@ and more. We provide technical and analytical support for early career researche
 
 # Workshops
 
-**Penryn**
+**Penryn** (partly funded by the [Doctoral College](https://www.exeter.ac.uk/doctoralcollege/researcherdevelopment/rdrc/))
 
 * [Python for scientific research]({{ site.baseurl }}{% link workshops/intro-to-python.md %})
 * [Introduction to R](IntroToR)
