@@ -15,7 +15,7 @@ and more. We provide technical and analytical support for early career researche
 * [Python for scientific research]({{ site.baseurl }}{% link workshops/intro-to-python.md %})
 * [Introduction to R](IntroToR)
 * [Advanced Visualisation and Data Wrangling in R](AdVis) [[Data](AdVis/dataFiles.zip)] [[Slides](AdVis/slides.zip)]
-* [Literate Programming and Reproducible Research in R](LitProg)
+* [Literate Programming and Reproducible Research in R](LitProg) [[Data and scripts](LitProg/dataFiles.zip)]
 
 **Streatham**
 
