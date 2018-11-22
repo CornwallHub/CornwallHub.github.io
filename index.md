@@ -16,7 +16,7 @@ and more. We provide technical and analytical support for early career researche
 * [Introduction to R](IntroToR)
 * [Advanced Visualisation and Data Wrangling in R](AdVis) [[Data](AdVis/dataFiles.zip)] [[Slides](AdVis/slides.zip)]
 * [Literate Programming and Reproducible Research in R](LitProg) [[Data and scripts](LitProg/dataFiles.zip)]
-* [Statistical Modelling in R](StatModelling)[[Data](StatModelling/dataFiles.zip)] [[Slides](StatModelling/slides.zip)]
+* [Statistical Modelling in R](StatModelling) [[Data](StatModelling/dataFiles.zip)] [[Slides](StatModelling/slides.zip)]
 
 **Streatham**
 
