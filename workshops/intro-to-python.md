@@ -19,3 +19,12 @@ layout: default
 6. Number crunching using `NumPy`/`SciPy`
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/06-NumpyScipy.pdf %})
     * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/06-NumpyScipy-Practical.html %})
+7. Plotting with `Matplotlib`
+    * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/07-Matplotlib.pdf %})
+    * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/07-Matplotlib-Practical.html %})
+8. Data analysis with `Pandas`
+    * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/08-Pandas.pdf %})
+    * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/08-Pandas-Practical.html %})
+9. Data visualisation with `Seaborn`
+    * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/09-Seaborn.pdf %})
+    * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/09-Seaborn-Practical.html %})
