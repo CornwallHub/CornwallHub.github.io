@@ -16,7 +16,7 @@ and more. We provide technical and analytical support for early career researche
 * [Introduction to R](IntroToR)
 * [Advanced Visualisation and Data Wrangling in R](AdVis) [[Data](AdVis/dataFiles.zip)] [[Slides](AdVis/slides.zip)]
 * [Open Science and Reproducible Research in R](reproducibleScience)
-* [Literate Programming and Reproducible Research in R](LitProg) [[Data and scripts](LitProg/dataFiles.zip)]
+* [R Scripting and R Markdown](LitProg) [[Data and scripts](LitProg/dataFiles.zip)]
 * [Statistical Modelling in R](StatModelling) [[Data](StatModelling/dataFiles.zip)] [[Slides](StatModelling/slides.zip)]
 * [Machine Learning](MachineLearning) [[Data](MachineLearning/data.zip)] [[Slides](MachineLearning/slides.zip)]
 
