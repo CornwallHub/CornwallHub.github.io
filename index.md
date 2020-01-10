@@ -10,7 +10,7 @@ and more. We provide technical and analytical support for early career researche
 
 # Workshops
 
-**Penryn** (partly funded by the [Doctoral College](https://www.exeter.ac.uk/doctoralcollege/researcherdevelopment/rdrc/))
+**Penryn Campus** (partly funded by the [Doctoral College](https://www.exeter.ac.uk/doctoralcollege/researcherdevelopment/rdrc/))
 
 * [Python for scientific research]({{ site.baseurl }}{% link workshops/intro-to-python.md %})
 * [Introduction to R](IntroToR)
@@ -21,7 +21,7 @@ and more. We provide technical and analytical support for early career researche
 * [Machine Learning](MachineLearning) [[Data](MachineLearning/data.zip)] [[Slides](MachineLearning/slides.zip)]
 * [Spatial Data Analysis](spatial_data_analysis) [[Data](spatial_data_analysis/data.zip)] [[Slides](spatial_data_analysis/slides.zip)]
 
-**Streatham**
+**Streatham Campus**
 
 * [ImageJ GUI](imagej-gui)
 * [ImageJ Macros](imagej-macros)
