@@ -4,6 +4,20 @@ layout: default
 
 # Python for scientific research
 
+## Course dates 2020
+
+
+1. Tue February 4 
+..* 0900 - 1100, room: DDM IT/3.037
+..* 1300 - 1600, room: DDM IT/
+        
+
+
+DDM: Daphne du Maurier building
+
+
+## Lecture slides from previous years
+
 0. [Introduction]({{ site.baseurl }}{% link workshops/intro-to-python/00-Introduction.pdf %})
 1. Built-in data types
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/01-DataTypes.pdf %})
