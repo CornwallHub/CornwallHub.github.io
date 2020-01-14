@@ -17,8 +17,14 @@ layout: default
 4. Tue March 25
 - 1100 - 1400, room: DDM IT/1.033
 
+(DDM: Daphne du Maurier building)
 
-DDM: Daphne du Maurier building
+## Registration
+Register for the course on [Trent](http://www.exeter.ac.uk/staff/development/coursedetail/?code=80086) (for staff) or [My Career Zone](https://mycareerzone.exeter.ac.uk/students/events/Detail/686239) (Postgraduate students). 
+
+## Questions about the course
+
+Contact Bram, a dot l dot w dot kuijper at exeter dot ac dot uk
 
 
 ## Lecture slides from previous years
