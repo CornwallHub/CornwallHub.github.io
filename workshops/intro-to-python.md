@@ -27,7 +27,9 @@ Register for the course on [Trent](http://www.exeter.ac.uk/staff/development/cou
 Contact Bram, a dot l dot w dot kuijper at exeter dot ac dot uk
 
 
-## Lecture slides from previous years
+## Lecture slides
+
+Slides from previous years are shown for upcoming lectures. 
 
 0. [Introduction]({{ site.baseurl }}{% link workshops/intro-to-python/00-Introduction.pdf %})
 1. Built-in data types
