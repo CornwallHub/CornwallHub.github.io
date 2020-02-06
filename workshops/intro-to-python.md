@@ -34,7 +34,8 @@ Slides from previous years are shown for upcoming lectures.
 0. [Introduction]({{ site.baseurl }}{% link workshops/intro-to-python/00-Introduction.pdf %})
 1. Built-in data types
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/01-DataTypes.pdf %})
-    * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/01-DataTypes-Practical.html %})
+    * [Practical with exercises]({{ site.baseurl }}{% link workshops/intro-to-python/01-DataTypes-Practical.html %})
+    * [Answers to exercises]({{ site.baseurl }}{% link workshops/intro-to-python/01-DataTypes-Practical-Answers.html %})
 2. Program flow control
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/02-FlowControl.pdf %})
     * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/02-FlowControl-Practical.html %})
