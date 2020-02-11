@@ -26,6 +26,10 @@ Register for the course on [Trent](http://www.exeter.ac.uk/staff/development/cou
 
 Contact Bram, a dot l dot w dot kuijper at exeter dot ac dot uk
 
+## Documentation and other relevant websites
+* Official documentation: see [docs.python.org](https://docs.python.org/3/). Check out their [Introductory tutorial](https://docs.python.org/3/tutorial/index.html)
+* To test your own regular expressions, use [regex101.com](https://regex101.com). Regular expressions are the subject of some [comics](https://xkcd.com/208/) too...
+* More about the Spyder IDE, see [docs.spyder-ide.org/](https://docs.spyder-ide.org/). Using shortcuts to define [code cells](https://docs.spyder-ide.org/editor.html#defining-code-cells) is quite handy too 
 
 ## Lecture slides
 
