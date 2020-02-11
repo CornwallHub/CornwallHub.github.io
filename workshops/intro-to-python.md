@@ -26,20 +26,29 @@ Register for the course on [Trent](http://www.exeter.ac.uk/staff/development/cou
 
 Contact Bram, a dot l dot w dot kuijper at exeter dot ac dot uk
 
+## Documentation and other relevant websites
+* Official documentation: see [docs.python.org](https://docs.python.org/3/). Check out their [Introductory tutorial](https://docs.python.org/3/tutorial/index.html)
+* To test your own regular expressions, use [regex101.com](https://regex101.com). Regular expressions are the subject of some [comics](https://xkcd.com/208/) too...
+* More about the Spyder IDE, see [docs.spyder-ide.org/](https://docs.spyder-ide.org/). Using shortcuts to define [code cells](https://docs.spyder-ide.org/editor.html#defining-code-cells) is quite handy too 
 
-## Lecture slides from previous years
+## Lecture slides
+
+Slides from previous years are shown for upcoming lectures. 
 
 0. [Introduction]({{ site.baseurl }}{% link workshops/intro-to-python/00-Introduction.pdf %})
 1. Built-in data types
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/01-DataTypes.pdf %})
-    * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/01-DataTypes-Practical.html %})
+    * [Practical with exercises]({{ site.baseurl }}{% link workshops/intro-to-python/01-DataTypes-Practical.html %})
+    * [Answers to exercises]({{ site.baseurl }}{% link workshops/intro-to-python/01-DataTypes-Practical-Answers.html %})
 2. Program flow control
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/02-FlowControl.pdf %})
     * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/02-FlowControl-Practical.html %})
 3. Functions, modules and packages
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/03-FunctionsModules.pdf %})
     * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/03-FunctionsModules-Practical.html %})
-4. [Text manipulation]({{ site.baseurl }}{% link workshops/intro-to-python/04-TextManipulation.pdf %})
+4. Text manipulation and regular expressions
+    * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/04-TextManipulation.pdf %})
+    * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/04-TextManipulation-Practical.html %})
 5. [File system and handling]({{ site.baseurl }}{% link workshops/intro-to-python/05-FileSystem.pdf %})
 6. Number crunching using `NumPy`/`SciPy`
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/06-NumpyScipy.pdf %})

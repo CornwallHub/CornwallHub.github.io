@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>02_FlowControl_Practical</title>
+<title>String_Manipulation_Regex_Practical</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13080,6 +13080,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Ignore this code; it&#39;s only here to display the image below</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;../img/logo.jpg&quot;</span><span class="p">)</span>
 </pre></div>
@@ -13114,22 +13115,41 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-for-scientific-research">Python for scientific research<a class="anchor-link" href="#Python-for-scientific-research">&#182;</a></h1><h1 id="Flow-control">Flow control<a class="anchor-link" href="#Flow-control">&#182;</a></h1><h3 id="Bram-Kuijper">Bram Kuijper<a class="anchor-link" href="#Bram-Kuijper">&#182;</a></h3><h3 id="University-of-Exeter,-Penryn-Campus,-UK">University of Exeter, Penryn Campus, UK<a class="anchor-link" href="#University-of-Exeter,-Penryn-Campus,-UK">&#182;</a></h3><h3 id="February-2020">February 2020<a class="anchor-link" href="#February-2020">&#182;</a></h3>
+<h1 id="Python-for-scientific-research">Python for scientific research<a class="anchor-link" href="#Python-for-scientific-research">&#182;</a></h1><h1 id="String-manipulation-and-regular-expression">String manipulation and regular expression<a class="anchor-link" href="#String-manipulation-and-regular-expression">&#182;</a></h1><h3 id="Bram-Kuijper">Bram Kuijper<a class="anchor-link" href="#Bram-Kuijper">&#182;</a></h3><h3 id="University-of-Exeter,-Penryn-Campus,-UK">University of Exeter, Penryn Campus, UK<a class="anchor-link" href="#University-of-Exeter,-Penryn-Campus,-UK">&#182;</a></h3><h3 id="February-2020">February 2020<a class="anchor-link" href="#February-2020">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">&#182;</a></h1><ul>
-<li>Executing code one line at a time is useful but limiting</li>
-<li><strong>Flow control</strong> commands lets us dictate the <strong>order</strong> in which commands are run:<ol>
-<li><strong>If-else</strong>: to change what commands are executed under certain conditions</li>
-<li><strong>For loops</strong>: to repeat the same thing N times</li>
-<li><strong>While loops</strong>: to repeat the same thing until a specific condition is met</li>
-</ol>
-</li>
+<h1 id="String-manipulation">String manipulation<a class="anchor-link" href="#String-manipulation">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="String-escape-sequences">String escape sequences<a class="anchor-link" href="#String-escape-sequences">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To add newlines and other special characters to our text we can use a range of <a href="https://docs.python.org/3/reference/lexical_analysis.html#grammar-token-stringescapeseq">escape sequences</a>. The most important ones are</p>
+<ul>
+<li><code>'\n'</code>: newline</li>
+<li><code>'\t'</code>: tab</li>
+<li><code>'\"'</code>: <code>"</code> (double quotes)</li>
+<li><code>'\''</code>: <code>'</code> (single quotes)</li>
+<li><code>'\xhh'</code>: character with hex value <code>hh</code>
+When one interfaces with online databases or text files (think of a tab-separated csv file, for example), an understanding of these escape characters becomes essential.</li>
 </ul>
+<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>Write a single-quoted byte string (i.e., <code>b'..'</code>) and print it to the screen using its member function <a href="https://docs.python.org/3/library/stdtypes.html?highlight=byte%20decode#bytes.decode"><code>bytes.decode()</code></a>. The resulting message should be:</p>
+<p><code>Bob told the PI:  
+        "That complicated data 'pipeline'? She automated that already, using Python.
+        She is now 'working remotely' from a château near Saint-Raphaël in France."</code></p>
+<p>Hint: for the international characters, use the hexadecimal codes from the online <a href="http://www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=%C3%A2&amp;mode=char">UTF-8 tool</a></p>
 
 </div>
 </div>
@@ -13137,7 +13157,87 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="If-else">If-else<a class="anchor-link" href="#If-else">&#182;</a></h1><p>The if-else statement let us execute commands <em>only</em> if certain conditions are met. Consider the simple example of printing whether an integer is positive, negative or zero.</p>
+<h2 id="String-methods">String methods<a class="anchor-link" href="#String-methods">&#182;</a></h2><p>Python has a number of <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">string methods</a> to manipulate text. A number of important ones are (optional arguments are ommitted, but links are provided to the official documentation):</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Function name</th>
+<th style="text-align:left">What does it do?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/stdtypes.html#str.count"><code>str.count(sub)</code></a></td>
+<td style="text-align:left">Total number of non-overlapping occurrences of substring <code>sub</code> in <code>str</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/stdtypes.html#str.find"><code>str.find(sub)</code></a></td>
+<td style="text-align:left">Finds the leftmost occurrence of substring <code>sub</code> in <code>str</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/stdtypes.html#str.join"><code>str.join(iterable)</code></a></td>
+<td style="text-align:left">Concatenates elements in <code>iterable</code> using the concatenation string <code>str</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/stdtypes.html#str.strip"><code>str.strip()</code> </a></td>
+<td style="text-align:left">Strips whitespace from both sides of <code>str</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/stdtypes.html#str.split"><code>str.split(sep)</code> </a></td>
+<td style="text-align:left">Splits a string into a list of substrings, using separator string <code>sep</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><ol>
+<li>Write a function that randomly samples 20 items from a <code>list</code> of values, where each value is either a number between 1 and 10 or a whitespace. The function returns a <code>str</code> object of a single line containing all values, separated by commas, for example:</li>
+</ol>
+<p><code>5,10,1,9,8,6,8,4,4,6, ,9,6,1,2,2,10,5,1,</code></p>
+<p>Use the <a href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.random.choice.html#numpy.random.choice"><code>numpy.random.sample()</code></a> function from the <code>numpy.random</code> library to randomly sample <code>size=20</code> values from a <code>list</code> object.</p>
+<ol>
+<li>Write a second function, which takes the comma-separated string that you just generated as an argument. The function then counts the number of occurrences of each number or a whitespace in the string. The function should print a string that gives a value (i.e., a number or a whitespace) and the number of times this value was counted. Values that were not encountered in the string should have a count of 0.</li>
+</ol>
+<p><strong>Hint </strong> There are different ways of counting occurrences of all characters in a text. Typically using a dictionary is the most efficient.</p>
+<p>For the example string <code>5,10,1,9,8,6,8,4,4,6, ,9,6,1,2,2,10,5,1,</code> above, the output should be:<br>
+<code>Value 1 occurred 3 times.</code><br>
+<code>Value 2 occurred 2 times.</code><br>
+<code>Value 3 occurred 0 times.</code><br>
+<code>Value 4 occurred 2 times.</code><br>
+<code>Value 5 occurred 2 times.</code><br>
+<code>Value 6 occurred 3 times.</code><br>
+<code>Value 7 occurred 0 times.</code><br>
+<code>Value 8 occurred 2 times.</code><br>
+<code>Value 9 occurred 2 times.</code><br>
+<code>Value 10 occurred 2 times.</code><br>
+<code>Value   occurred 2 times.</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Regular-Expressions">Regular Expressions<a class="anchor-link" href="#Regular-Expressions">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To work with regular expressions (regexes) we need to import the <code>re</code> package:</p>
 
 </div>
 </div>
@@ -13147,35 +13247,10 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>
-
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is positive&quot;</span><span class="p">)</span> 
-<span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># read as &quot;else if&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is negative&quot;</span><span class="p">)</span> 
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is zero&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>x is zero
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13183,7 +13258,121 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can have as many <code>elif</code> statements (read as else if) as we want. Note however that once a condition is met, the program will exit the <code>if...elif...else</code> statement.</p>
+<h3 id="Some-of-the-key-functions-to-find-and-replace-regex-patterns">Some of the key functions to find and replace regex patterns<a class="anchor-link" href="#Some-of-the-key-functions-to-find-and-replace-regex-patterns">&#182;</a></h3><p>The functions below are the ones most often used to find matching patterns. Clicking on the function names should take you to the corresponding Python documentation.</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Function name</th>
+<th style="text-align:left">What does it do?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/re.html?highlight=re%20search#re.compile"><code>re.compile()</code></a></td>
+<td style="text-align:left">Compiles a regular expression before using it. Avoid unless you use the same regex 1000s of times</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/re.html?highlight=re%20search#re.findall"><code>re.findall()</code></a></td>
+<td style="text-align:left">Finds all non-overlapping matches of a pattern in a string and returns a list containing all matches</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/re.html?highlight=re%20search#re.Pattern.search"><code>re.search()</code></a></td>
+<td style="text-align:left">Finds the first occurrence of a pattern in a string and returns a <a href="https://docs.python.org/3/library/re.html?highlight=re%20search#match-objects">MatchObject</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/re.html?highlight=re%20search#re.sub"><code>re.sub()</code></a></td>
+<td style="text-align:left">Replaces a matching pattern with a replacement string</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Symbols-to-define-character-classes-and-escape-sequences">Symbols to define character classes and escape sequences<a class="anchor-link" href="#Symbols-to-define-character-classes-and-escape-sequences">&#182;</a></h3><p>Regexes are built on the principle that the character <code>'f'</code> matches occurrences of that character <code>'f'</code> in string. However, one often needs to match patterns that can include large numbers of potential characters. To facilitate this, Python <code>regex</code>es include symbols that reflect particular character classes...</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Symbol</th>
+<th style="text-align:left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>.</code></td>
+<td style="text-align:left">Matches any character</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[abc]</code></td>
+<td style="text-align:left">Matches any of the characters <code>'a'</code>, <code>'b'</code> or <code>'c'</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[^abc]</code></td>
+<td style="text-align:left">Matches anything but the characters <code>'a'</code>, <code>'b'</code> or <code>'c'</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[a-z]</code></td>
+<td style="text-align:left">Matches a range of characters (in this case all lowercase characters)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>^a</code></td>
+<td style="text-align:left">Matches the character <code>'a'</code> at the start of the string</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a$</code></td>
+<td style="text-align:left">Matches the character <code>'a'</code> at the end of the string</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a|b</code></td>
+<td style="text-align:left">Matches character <code>'a'</code> or character <code>'b'</code></td>
+</tr>
+</tbody>
+</table>
+<p>.. and escape sequences:</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Escape character</th>
+<th style="text-align:left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>\d</code></td>
+<td style="text-align:left">Matches any decimal digit; this is equivalent to the class <code>[0-9]</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\D</code></td>
+<td style="text-align:left">Matches any non-digit character; this is equivalent to the class <code>[^0-9]</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\s</code></td>
+<td style="text-align:left">Matches any whitespace character; this is equivalent to the class <code>[ \t\n\r\f\v]</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\S</code></td>
+<td style="text-align:left">Matches any non-whitespace character; this is equivalent to the class <code>[^ \t\n\r\f\v]</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\w</code></td>
+<td style="text-align:left">Matches any alphanumeric character; this is equivalent to the class <code>[a-zA-Z0-9_]</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\W</code></td>
+<td style="text-align:left">Matches any non-alphanumeric character; this is equivalent to the class <code>[^a-zA-Z0-9_]</code></td>
+</tr>
+</tbody>
+</table>
+<p>If you want to actually match a backslash <code>\</code> or another protected regular expression character such as <code>[</code>, you can match them by <em>escaping</em> these characters: i.e., by writing <code>\\</code> and <code>\[</code> respectively.</p>
+<h3 id="Note:">Note:<a class="anchor-link" href="#Note:">&#182;</a></h3><p>As we do not want Python to substitute any backslashes for characters, regular expressions always require <strong>raw strings</strong>, i.e., <code>r"..."</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example:-searching-for-a-backslash">Example: searching for a backslash<a class="anchor-link" href="#Example:-searching-for-a-backslash">&#182;</a></h3><p>Find a backslash in a string. Set up two example strings, one that contains the backslash, one which does not:</p>
 
 </div>
 </div>
@@ -13193,16 +13382,13 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is positive&quot;</span><span class="p">)</span> 
-<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is greater than one&quot;</span><span class="p">)</span> 
-<span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is negative&quot;</span><span class="p">)</span> 
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is zero&quot;</span><span class="p">)</span>
+<span class="c1"># the two examples</span>
+<span class="n">str_with_backslash</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;did you see that backslash \ somewhere?&quot;</span>
+<span class="n">str_without_backslash</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;No it&#39;s gone...&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str_with_backslash</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str_without_backslash</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13219,7 +13405,8 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x is positive
+<pre>did you see that backslash \ somewhere?
+No it&#39;s gone...
 </pre>
 </div>
 </div>
@@ -13231,8 +13418,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note how the "x is greater than one" is not executed because the program exits the <code>if...elif...else</code> statement once the first condition (<code>x &gt; 0</code>) is met.</p>
-<p><strong>NOTE</strong>: Unlike most other programming languages we don't need curly brackets { } to encapsulate multiple commands after the <code>if</code>, <strong>indentation</strong> is everything in Python!</p>
+<h3 id="Example-continued:-searching-for-a-backslash-using-match-objects">Example continued: searching for a backslash using match objects<a class="anchor-link" href="#Example-continued:-searching-for-a-backslash-using-match-objects">&#182;</a></h3><p>Now use the function <code>re.search()</code> to search for the backslash within <code>str_with_backslash</code>. If successful, <code>re.search()</code> returns a <a href="https://docs.python.org/3/library/re.html?highlight=re%20search#match-objects">match object</a>, which contains the matched substrings. If <code>re.search()</code> is not successful, it returns <code>None</code>.</p>
 
 </div>
 </div>
@@ -13242,17 +13428,10 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Search for a backslash, by simply escaping a backslash:</span>
+<span class="n">result_backslash</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">str_with_backslash</span><span class="p">)</span> 
 
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x = </span><span class="si">{x}</span><span class="s2">&quot;</span><span class="p">)</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is positive&quot;</span><span class="p">)</span> 
-<span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x = </span><span class="si">{x}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is negative&quot;</span><span class="p">)</span> 
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x = </span><span class="si">{x}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is zero&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_backslash</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13269,8 +13448,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = -2
-x is negative
+<pre>&lt;re.Match object; span=(27, 28), match=&#39;\\&#39;&gt;
 </pre>
 </div>
 </div>
@@ -13278,33 +13456,15 @@ x is negative
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>Write a script that finds out whether a certain year (e.g., <code>2004</code>, <code>1600</code> or <code>51</code>; contained in a variable <code>year</code>) is a leap year. A year is said to be leap year if the year is exactly divisible by 4 but not divisible by 100. Year is also a leap year if it is exactly divisible by 400.</p>
-<p>If the year is a leap year, the script should print "The year XXXX is a leap year", otherwise it should print "Nope, the year XXXX is not a leap year".</p>
-<p>You can assume that the value contained in <code>year</code> is a positive integer.</p>
-<p>The <a href="https://docs.python.org/3/reference/expressions.html?highlight=precedence#operator-precedence">table on operator precedence</a> may be useful here again.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="For-loops">For loops<a class="anchor-link" href="#For-loops">&#182;</a></h1><p>A common task in scientific computing is to perform the same operation several times. Consider the (not very useful) example of wanting to print "Hello world" five times. To do this we need to create an <em>iterator</em> (a sequence of integers) using the <code>range</code> command.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{i}</span><span class="s2">: Hello world&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result_no_backslash</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">str_without_backslash</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result_no_backslash</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13321,11 +13481,7 @@ x is negative
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0: Hello world
-1: Hello world
-2: Hello world
-3: Hello world
-4: Hello world
+<pre>None
 </pre>
 </div>
 </div>
@@ -13337,8 +13493,8 @@ x is negative
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note how the iterate <code>i</code> changes as we go through the loop; <code>i=0</code>, then <code>i=1</code>, until <code>i=4</code> (remember <code>range(5)</code> creates the sequence 0, 1, 2, 3, 4).</p>
-<p>We can also iterate over a list. Suppose we have a list of strings and for each string we want to compute its length (using the <code>len()</code> in-built function) and print it out in upper case (using the <code>.upper()</code> method of strings).</p>
+<p>The match object <code>result_backslash</code> has the method <code>Match.group(0)</code> to retrieve the value of the first (and in this case, only) match.<br>
+We can use the method <code>Match.span()</code> to find the (start,end) positions <em>where</em> the pattern matches:</p>
 
 </div>
 </div>
@@ -13348,12 +13504,11 @@ x is negative
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Uganda&quot;</span><span class="p">,</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span> <span class="s2">&quot;Kenya&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># the matched substring (in this case just a slash)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_backslash</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> 
 
-<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
-    <span class="n">NLength</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">country</span><span class="p">)</span> <span class="c1"># compute the length of the string</span>
-    <span class="n">countryUpper</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="c1"># convert the string to upper case</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{countryUpper}</span><span class="s2"> contains </span><span class="si">{NLength}</span><span class="s2"> characters&quot;</span><span class="p">)</span>
+<span class="c1"># (start, end) position</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_backslash</span><span class="o">.</span><span class="n">span</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> 
 </pre></div>
 
     </div>
@@ -13370,268 +13525,8 @@ x is negative
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>UGANDA contains 6 characters
-UNITED KINGDOM contains 14 characters
-KENYA contains 5 characters
-GERMANY contains 7 characters
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So for the first iteration, <code>country = "Uganda"</code>, then <code>country = "United Kingdom"</code> etc..</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><ol>
-<li>Loop from 1 to 10 and print out the square of that number </li>
-<li>Create a list of 5 short DNA sequences (e.g <code>["acccgtagcgta", "cgaattgccgaa", ...]</code>). Loop through this list and for each DNA sequence compute the total number of "g" and "c" basepairs, and subsequently the percentage GC content (i.e., the percentage of basepairs that are guanine or cytosine). Print the information out. </li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="While-loops">While loops<a class="anchor-link" href="#While-loops">&#182;</a></h1><p>Similar to for loops, but instead of specifying the number of loops via an iterator, the program keeps on looping until a specific condition is met. For example we can use a while loop to print the integers 10 to 1.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>10
-9
-8
-7
-6
-5
-4
-3
-2
-1
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As long as x is positive keep on executing the commands <code>print(x)</code> and <code>x = x - 1</code>. Note that we could have achieved the same thing using a for loop</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>10
-9
-8
-7
-6
-5
-4
-3
-2
-1
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In general:</p>
-<ol>
-<li>Use <code>for loops</code> over <code>while loops</code> where possible</li>
-<li>Ensure that the while condition evaluates to False at some point to avoid an infinite loop</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="List-comprehensions">List comprehensions<a class="anchor-link" href="#List-comprehensions">&#182;</a></h1><p>Lists are a popular data type in Python due to their versatility. List comprehensions are simply an optimized and readible method for creating a list using a "shorthand" for loop. Recall the previous example where we converted a list of country names to upper case. Suppose we wanted to store the list of countries in upper case in another variable. To do this using for loops we need to create an empty list and then sequentially append the upper cased name to it.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Uganda&quot;</span><span class="p">,</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span> <span class="s2">&quot;Kenya&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">]</span>
-
-<span class="n">countriesUpper</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
-    <span class="n">countriesUpper</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span> <span class="c1"># the .append() list method adds a new element to the list</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">countriesUpper</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;UGANDA&#39;, &#39;UNITED KINGDOM&#39;, &#39;KENYA&#39;, &#39;GERMANY&#39;]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Alternatively we can achieve the above in a conveniently one line command called a list comprehension</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countriesUpper</span> <span class="o">=</span> <span class="p">[</span><span class="n">country</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">countriesUpper</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;UGANDA&#39;, &#39;UNITED KINGDOM&#39;, &#39;KENYA&#39;, &#39;GERMANY&#39;]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can also take this further and introduce an <code>if</code> clause to avoid including "Kenya" for example from the list of countries.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countriesUpper</span> <span class="o">=</span> <span class="p">[</span><span class="n">country</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span> <span class="k">if</span> <span class="n">country</span> <span class="o">!=</span> <span class="s2">&quot;Kenya&quot;</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">countriesUpper</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;UGANDA&#39;, &#39;UNITED KINGDOM&#39;, &#39;GERMANY&#39;]
+<pre>\
+(27, 28)
 </pre>
 </div>
 </div>
@@ -13644,14 +13539,9 @@ GERMANY contains 7 characters
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h2><ol>
-<li>Using list comprehensions, populate a list with the square of numbers from 1 to 10 (i.e 1, 4, 9, etc.)</li>
-<li>Using list comprehensions, populate a list, elements of which are tuples (i,j,k) where i is a number from 1 to 10 and j is its square,while k is its square root  </li>
-<li>Subsequently, use a separate loop to print out the contents of each tuple as follows:<br>
-"The square of 1 is 1 while its square root is 1.0"<br>
-"The square of 2 is 4 while its square root is 1.414214"<br>
-etcetera  </li>
+<li>Write a function that uses a regular expression to check whether a lowercase string is a DNA sequence: i.e., it only contains the 4 nucleotides 'c', 'g', 'a', 't'</li>
+<li>Test the function: generate a list with strings and call the function repeatedly within a <code>for</code> loop. If the current string (say, <code>'cccggcgggg'</code> is indeed a sequence, the text <code>'The sequence 'cccggcgggg' is a sequence'</code> should appear. Whereas if the current string is not a sequence, the text <code>The sequence 'cccbcgggg' is not a sequence'</code> should appear.</li>
 </ol>
-<p>(Hint: to get the proper precision of the square root, use the <code>g</code> <a href="https://docs.python.org/3/library/string.html?highlight=str%20format#format-specification-mini-language">formatting modifier</a>)</p>
 
 </div>
 </div>
@@ -13659,22 +13549,72 @@ etcetera  </li>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Enumerate">Enumerate<a class="anchor-link" href="#Enumerate">&#182;</a></h1><p>Looping over lists is very common. However, sometimes we also want to keep track of how many times we have looped over (i.e the index of the iteration, 0, 1, 2, etc.). Using the countries example, let us print the country in upper case next to the index using a normal for loop. In this case we need to keep track of an index ourselves.</p>
+<h3 id="Regular-expression-character-classes-and-repetition">Regular expression character classes and repetition<a class="anchor-link" href="#Regular-expression-character-classes-and-repetition">&#182;</a></h3><p>Next, we introduce a number of modifiers that allow you to change the number of occurrences of a pattern that need to be matched:</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Repetition modifier</th>
+<th style="text-align:left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>a{1,4}</code></td>
+<td style="text-align:left">Matches <code>'a'</code> when it occurs in groups of 1 to 4</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a{1,4}?</code></td>
+<td style="text-align:left">Matches <code>'a'</code> when it occurs in groups of 1 to 4, with as few repetitions as possible</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a*</code></td>
+<td style="text-align:left">Matches <code>'a'</code> any number of times (including no match at all)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a+</code></td>
+<td style="text-align:left">Matches <code>'a'</code> one or more times</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a?</code></td>
+<td style="text-align:left">Matches <code>'a'</code> zero or one times</td>
+</tr>
+</tbody>
+</table>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-4">Exercise 4<a class="anchor-link" href="#Exercise-4">&#182;</a></h2><ol>
+<li><p>Try to match all characters but the first two and the last two in the string <code>'?:SADF005A3WERB1Fdk95fjdkjerij@!'</code> (note that the quotation marks <code>'</code> indicate that it is a string and need not be matched). You can either use <a href="https://regex101.com/">regex101</a> or your spyder IDE. In the latter case, use the function <code>re.search()</code> to return a <code>match object</code> that is contained in the variable <code>m_obj</code>.</p>
+</li>
+<li><p>If you used spyder: how many characters does your <code>m_obj.group(0)</code> contain? If only one, what modifier do you need to add to the regular expression to change this into a match that contains the complete <code>SADF005A3WERB1Fdk95fjdkjerij</code> string? If you have used <a href="https://regex101.com/">regex101</a>, make sure that you also obtain only have 1 match, rather than many matches.</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Grouping-and-remembering">Grouping and remembering<a class="anchor-link" href="#Grouping-and-remembering">&#182;</a></h2><p>When we want to replace pattern matches with another string in the function <a href="https://docs.python.org/3/library/re.html?highlight=re%20sub#re.sub"><code>re.sub()</code></a>, it can useful to be able to remember the patterns that we matched. A case in point are multiple dates, each in format <code>dd-mm-yyyy</code> that need to be replaced by dates in the format <code>yyyy.mm.dd</code>. In this case, it would be handy to be able to remember the year, month and day part of each match, so that we can simply swap the matched pattern around.</p>
+<p>To remember matches, we use grouping: i.e., we use parentheses <code>()</code> to create groups of patterns. For example, if we want to remember a sequence of exactly four digits representing a year we simply write <code>(\d{4,4})</code> rather than <code>\d{4,4}</code>. When we replace this pattern by some other text, we can remember this group by using the number of the group preceded by a backslash (e.g., <code>\1</code>,<code>\2</code>).</p>
+<h3 id="Grouping-and-remembering:-example">Grouping and remembering: example<a class="anchor-link" href="#Grouping-and-remembering:-example">&#182;</a></h3><p>To illustrate grouping, let's look at an example: say we have the following list of unique identifiers corresponding to individuals in a medical database:<br>
+<code>id4819;id3019;id4019;id1020;</code></p>
+<p>The database admin messed up his scripts, however, as the last two digits of each id should, in fact, precede the first two digits. For the first id, the correct code should have been <code>id1948</code> rather than <code>id4819</code>. Regex to the rescue?</p>
+<h3 id="Grouping-and-remembering:-solution">Grouping and remembering: solution<a class="anchor-link" href="#Grouping-and-remembering:-solution">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Uganda&quot;</span><span class="p">,</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span> <span class="s2">&quot;Kenya&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">]</span>
-
-<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># index counter</span>
-<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{i}</span><span class="s2">. {country.upper()}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># update index counter</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">idstr</span><span class="o">=</span><span class="s2">&quot;id4819;id3019;id4019;id1020;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;(\d{2,2})(\d{2,2})&quot;</span><span class="p">,</span><span class="n">repl</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;\2\1&quot;</span><span class="p">,</span><span class="n">string</span><span class="o">=</span><span class="n">idstr</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13691,14 +13631,7 @@ etcetera  </li>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1. UGANDA
-
-2. UNITED KINGDOM
-
-3. KENYA
-
-4. GERMANY
-
+<pre>id1948;id1930;id1940;id2010;
 </pre>
 </div>
 </div>
@@ -13710,46 +13643,43 @@ etcetera  </li>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Enumerate</strong> is a built-in function that lets us access the iterable element but also its index.</p>
+<p>By using parentheses to group the two 2-digit patterns <code>(\d{2,2})(\d{2,2})</code> and subsequently replacing the order of the found groups <code>"\2\1"</code> we can easily switch the order of the two groups of numbers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-5">Exercise 5<a class="anchor-link" href="#Exercise-5">&#182;</a></h2><ol>
+<li>Use <code>re.sub()</code> to write <code>"23.11.1980,29-12-2019,23051974"</code> as <code>"1980-11-23,2019-12-29,1974-05-23"</code></li>
+<li>Write a function that accepts a list with strings like the one below (i.e., a list of files in a directory)...  </li>
+</ol>
+<p><code>["tempfile_000","sim_evol_29_03_2015_349348329","sim_evol_29_03_2015_349348329_distribution1","sim_evol_29_03_2015_349348329_graph","sim_evol_29_03_2015_990999","sim_evol_29_03_2015_990999_distribution1","sim_evol_29_03_2015_9"]</code></p>
+<p>.. and retains only the following three elements (within the function you will need to loop and filter the above list):
+<code>["sim_evol_29_03_2015_349348329","sim_evol_29_03_2015_990999","sim_evol_29_03_2015_9"]</code></p>
+<p><strong>Hint</strong>: you might want to try your pattern on <a href="https://regex101.com">regex101</a>. As a test string, use the following list below (where we removed the quotation marks and the straight brackets). We do not want to match the complete thing, rather we would like to match against each line individually, hence put each item on a separate line in the 'Test String' form:</p>
+<p><code>tempfile_000  
+sim_evol_29_03_2015_349348329  
+sim_evol_29_03_2015_349348329_distribution1  
+sim_evol_29_03_2015_349348329_graph  
+sim_evol_29_03_2015_990999  
+sim_evol_29_03_2015_990999_distribution1  
+sim_evol_29_03_2015_9</code></p>
+<p>PS: The task in 5.2 is a very common one: if you want to work with large numbers of files, regexes are the tool of choice for filtering complicated filenames</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">country</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">countries</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;{i+1}. {country.upper()}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>1. UGANDA
-
-2. UNITED KINGDOM
-
-3. KENYA
-
-4. GERMANY
-
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
