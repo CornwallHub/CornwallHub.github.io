@@ -14,7 +14,7 @@ layout: default
 - 1500 - 1800, room: DDM IT/3.037
 3. Tue February 25
 - 0900 - 1200, room: DDM IT/3.037
-4. Tue March 25
+4. Tue March 3 ~~Tue March 25~~
 - 1100 - 1400, room: DDM IT/1.033
 
 (DDM: Daphne du Maurier building)
