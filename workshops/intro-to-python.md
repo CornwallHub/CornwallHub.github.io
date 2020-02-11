@@ -42,7 +42,9 @@ Slides from previous years are shown for upcoming lectures.
 3. Functions, modules and packages
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/03-FunctionsModules.pdf %})
     * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/03-FunctionsModules-Practical.html %})
-4. [Text manipulation]({{ site.baseurl }}{% link workshops/intro-to-python/04-TextManipulation.pdf %})
+4. Text manipulation and regular expressions
+    * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/04-TextManipulation.pdf %})
+    * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/04-TextManipulation-Practical.html %})
 5. [File system and handling]({{ site.baseurl }}{% link workshops/intro-to-python/05-FileSystem.pdf %})
 6. Number crunching using `NumPy`/`SciPy`
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/06-NumpyScipy.pdf %})

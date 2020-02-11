@@ -13516,7 +13516,7 @@ using the <code>type</code> command.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Order-of-evaluation-and-operator-precedence">Order of evaluation and operator precedence<a class="anchor-link" href="#Order-of-evaluation-and-operator-precedence">&#182;</a></h2><p>*This exercise has been corrected and substantially revised Feb 6 2020**</p>
+<h2 id="Order-of-evaluation-and-operator-precedence">Order of evaluation and operator precedence<a class="anchor-link" href="#Order-of-evaluation-and-operator-precedence">&#182;</a></h2><p><strong>This exercise has been corrected and substantially revised Feb 6 2020</strong></p>
 <p>Normally, Python interprets statements from <strong>left to right</strong>. Hence if we write <code>a + b - c</code>, what Python does implicitly is <code>(a + b) - c</code>. For this example evaluation order does not affect the outcome of the expression, but later during the course we will see an example where the order of evaluation <em>does</em> matter.</p>
 <p>Also important is <strong>operator precedence</strong>. For example, the logical operator <code>and</code> takes precedence over <code>or</code> in a similar way as multiplication takes precedence over addition or subtraction. Hence, if we would write <code>a or b and c</code>, precedence rules make that <code>b and c</code> is evaluated first, so that <code>a or b and c</code> is evaluated as <code>a or (b and c)</code>. If we'd rather would like Python to evaluate <code>a or b</code> first, we can always tell Python to do so by adding parentheses: <code>(a or b) and c</code>.</p>
 <p>A complete list with precedence of all operators can be found in the Python documentation, <a href="https://docs.python.org/3/reference/expressions.html?highlight=precedence#operator-precedence">here</a>. Note that in that table, lowest precedence is at the top of the table, while highest precedence is at the bottom.</p>
@@ -13638,7 +13638,7 @@ using the <code>type</code> command.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;James&#39;</span>
@@ -13656,7 +13656,7 @@ using the <code>type</code> command.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13681,7 +13681,7 @@ using the <code>type</code> command.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mySandwich</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
@@ -13735,7 +13735,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mySandwich</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
@@ -13801,7 +13801,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dna1</span> <span class="o">=</span> <span class="s1">&#39;acgtaagtc&#39;</span>
@@ -13819,7 +13819,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -13836,7 +13836,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 50 nucleotide long poly(A) tail sequence</span>
@@ -13853,7 +13853,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[32]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13870,7 +13870,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># You do (str * int) or (int * str)</span>
@@ -13887,7 +13887,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -13904,7 +13904,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Repeat the sequence &quot;actg&quot; 5 times</span>
@@ -13922,7 +13922,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -13947,7 +13947,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dna1</span> <span class="o">=</span> <span class="s2">&quot;acgtttgacgtaaacgttgacgttaa&quot;</span>
@@ -13965,7 +13965,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -13982,7 +13982,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dna1</span> <span class="o">!=</span> <span class="n">dna2</span>
@@ -13998,7 +13998,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[36]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -14015,7 +14015,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The &quot;in&quot; relational operator is True if a string is contained within another string </span>
@@ -14033,7 +14033,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[37]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -14050,7 +14050,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">motif</span> <span class="ow">in</span> <span class="n">dna2</span>
@@ -14066,7 +14066,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -14092,7 +14092,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John Smith&quot;</span>
@@ -14109,7 +14109,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -14126,7 +14126,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># fourth letter in name</span>
@@ -14142,7 +14142,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -14159,7 +14159,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1"># the first four letters in name</span>
@@ -14175,7 +14175,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[41]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -14192,7 +14192,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span> <span class="c1"># from the sixth letter until the end</span>
@@ -14208,7 +14208,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -14225,7 +14225,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># the last letter in name</span>
@@ -14241,7 +14241,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -14258,7 +14258,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="c1"># the last three letters in name</span>
@@ -14274,7 +14274,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -14291,7 +14291,7 @@ spam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># Slice in steps of two up to (not including) character 8</span>
@@ -14307,7 +14307,7 @@ spam
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[45]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -14527,7 +14527,7 @@ pi to 4 decimal places is 3.1416
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">genes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Irf1&quot;</span><span class="p">,</span> <span class="s2">&quot;Ccl3&quot;</span><span class="p">,</span> <span class="s2">&quot;Il12rb1&quot;</span><span class="p">,</span> <span class="s2">&quot;Ifng&quot;</span><span class="p">,</span> <span class="s2">&quot;Cxcl10&quot;</span><span class="p">]</span>
@@ -14538,10 +14538,30 @@ pi to 4 decimal places is 3.1416
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>list</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">genes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># access the name of the first gene</span>
@@ -14551,10 +14571,30 @@ pi to 4 decimal places is 3.1416
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Irf1&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">genes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># access the name of the last gene</span>
@@ -14564,16 +14604,56 @@ pi to 4 decimal places is 3.1416
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Cxcl10&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">genes</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># access the second and third genes</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Ccl3&#39;, &#39;Il12rb1&#39;]</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -14588,7 +14668,7 @@ pi to 4 decimal places is 3.1416
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">genes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># access first character of first gene</span>
@@ -14598,16 +14678,56 @@ pi to 4 decimal places is 3.1416
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;I&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">genes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># access last character of first gene</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;1&#39;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -14622,7 +14742,7 @@ pi to 4 decimal places is 3.1416
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">favGene</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;Ifng&quot;</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Interferon&quot;</span><span class="p">,</span> <span class="s2">&quot;EntrezID&quot;</span><span class="p">:</span> <span class="mi">3458</span><span class="p">}</span>
@@ -14633,10 +14753,30 @@ pi to 4 decimal places is 3.1416
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>dict</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">favGene</span><span class="p">[</span><span class="s2">&quot;EntrezID&quot;</span><span class="p">]</span> <span class="c1"># access the EntrezID of my favourite gene</span>
@@ -14646,16 +14786,56 @@ pi to 4 decimal places is 3.1416
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3458</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">favGene</span><span class="p">[</span><span class="s2">&quot;Symbol&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># first two characters of my favourite gene&#39;s symbol</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;If&#39;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -14670,7 +14850,7 @@ pi to 4 decimal places is 3.1416
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myParam</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">1.3</span><span class="p">,</span> <span class="s2">&quot;delta&quot;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">}</span>
@@ -14678,6 +14858,26 @@ pi to 4 decimal places is 3.1416
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.4</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -14692,7 +14892,7 @@ pi to 4 decimal places is 3.1416
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">languages</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;Maltese&#39;</span><span class="p">,</span> <span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;Italian&#39;</span><span class="p">,</span> <span class="s1">&#39;Spanish&#39;</span><span class="p">])</span> <span class="c1"># languages I can speak(ish)</span>
@@ -14700,6 +14900,26 @@ pi to 4 decimal places is 3.1416
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>set</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -14714,7 +14934,7 @@ pi to 4 decimal places is 3.1416
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">DEGs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;Irf1&quot;</span><span class="p">,</span> <span class="s2">&quot;Ccl3&quot;</span><span class="p">,</span> <span class="s2">&quot;Il12rb1&quot;</span><span class="p">,</span> <span class="s2">&quot;Ifng&quot;</span><span class="p">,</span> <span class="s2">&quot;Cxcl10&quot;</span><span class="p">,</span> <span class="s2">&quot;Ccl4&quot;</span><span class="p">,</span> <span class="s2">&quot;Hist1h2ah&quot;</span><span class="p">,</span> <span class="s2">&quot;Iigp2&quot;</span><span class="p">,</span> <span class="s2">&quot;Ifit3&quot;</span><span class="p">])</span> <span class="c1"># list of DEGs</span>
@@ -14727,16 +14947,52 @@ pi to 4 decimal places is 3.1416
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;Ifng&#39;, &#39;Cxcl10&#39;, &#39;Irf1&#39;, &#39;Ifit3&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">DEGs</span> <span class="o">&amp;</span> <span class="n">IFG</span><span class="p">)</span> <span class="c1"># same as &quot;intersection&quot; using relational operators</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;Ifng&#39;, &#39;Cxcl10&#39;, &#39;Irf1&#39;, &#39;Ifit3&#39;}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14751,7 +15007,7 @@ pi to 4 decimal places is 3.1416
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">edgeR</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;Irf1&quot;</span><span class="p">,</span> <span class="s2">&quot;Ccl3&quot;</span><span class="p">,</span> <span class="s2">&quot;Il12rb1&quot;</span><span class="p">,</span> <span class="s2">&quot;Ccl4&quot;</span><span class="p">,</span> <span class="s2">&quot;Hist1h2ah&quot;</span><span class="p">,</span> <span class="s2">&quot;Iigp2&quot;</span><span class="p">,</span> <span class="s2">&quot;Ifit3&quot;</span><span class="p">])</span> <span class="c1"># identified by edgeR</span>
@@ -14761,6 +15017,25 @@ pi to 4 decimal places is 3.1416
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;Hist1h2ah&#39;, &#39;Il12rb1&#39;, &#39;Ifng&#39;, &#39;Irf1&#39;, &#39;Ifit3&#39;, &#39;Iigp2&#39;, &#39;Cxcl10&#39;, &#39;Ccl4&#39;, &#39;Ccl3&#39;}
+{&#39;Hist1h2ah&#39;, &#39;Il12rb1&#39;, &#39;Ifng&#39;, &#39;Irf1&#39;, &#39;Ifit3&#39;, &#39;Iigp2&#39;, &#39;Cxcl10&#39;, &#39;Ccl4&#39;, &#39;Ccl3&#39;}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14775,13 +15050,31 @@ pi to 4 decimal places is 3.1416
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">edgeR</span> <span class="o">-</span> <span class="n">DESeq2</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;Ccl4&#39;, &#39;Hist1h2ah&#39;, &#39;Ifit3&#39;, &#39;Iigp2&#39;}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14796,7 +15089,7 @@ pi to 4 decimal places is 3.1416
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">someNames</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span><span class="s2">&quot;Clarissa&quot;</span><span class="p">,</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="s2">&quot;Dylan&quot;</span><span class="p">,</span><span class="s2">&quot;Bob&quot;</span><span class="p">]</span>
@@ -14806,6 +15099,24 @@ pi to 4 decimal places is 3.1416
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The list [&#39;Alice&#39;, &#39;Bob&#39;, &#39;Clarissa&#39;, &#39;Alice&#39;, &#39;Dylan&#39;, &#39;Bob&#39;] constains 4 unique names
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14820,7 +15131,7 @@ pi to 4 decimal places is 3.1416
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">genes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Irf1&quot;</span><span class="p">,</span> <span class="s2">&quot;Ccl3&quot;</span><span class="p">,</span> <span class="s2">&quot;Il12rb1&quot;</span><span class="p">]</span> <span class="c1"># list of genes</span>
@@ -14829,6 +15140,24 @@ pi to 4 decimal places is 3.1416
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Irf2&#39;, &#39;Ccl3&#39;, &#39;Il12rb1&#39;]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14844,7 +15173,7 @@ pi to 4 decimal places is 3.1416
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">geneList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Irf1&quot;</span><span class="p">,</span> <span class="s2">&quot;Ccl3&quot;</span><span class="p">,</span> <span class="s2">&quot;Il12rb1&quot;</span><span class="p">]</span> <span class="c1"># list of genes</span>
@@ -14855,6 +15184,31 @@ pi to 4 decimal places is 3.1416
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-45-257440c7d930&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> 
+<span class="ansi-green-intense-fg ansi-bold">      4</span> geneList<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#34;Irf2&#34;</span> <span class="ansi-red-fg"># this is allowed</span>
+<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span>geneTuple<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#34;Irf2&#34;</span> <span class="ansi-red-fg"># this will throw an error</span>
+
+<span class="ansi-red-fg">TypeError</span>: &#39;tuple&#39; object does not support item assignment</pre>
+</div>
+</div>
+
 </div>
 </div>
 
