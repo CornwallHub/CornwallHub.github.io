@@ -43,13 +43,17 @@ Slides from previous years are shown for upcoming lectures.
 2. Program flow control
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/02-FlowControl.pdf %})
     * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/02-FlowControl-Practical.html %})
+    * [Answers to exercises]({{ site.baseurl }}{% link workshops/intro-to-python/02-FlowControl-Practical-Answers.html %})
 3. Functions, modules and packages
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/03-FunctionsModules.pdf %})
     * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/03-FunctionsModules-Practical.html %})
+    * [Answers to exercises]({{ site.baseurl }}{% link workshops/intro-to-python/03-FunctionsModules-Practical-Answers.html %})
 4. Text manipulation and regular expressions
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/04-TextManipulation.pdf %})
     * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/04-TextManipulation-Practical.html %})
-5. [File system and handling]({{ site.baseurl }}{% link workshops/intro-to-python/05-FileSystem.pdf %})
+5. File system
+    * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/05-FileSystem.pdf %})
+    * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/05-FileSystem-Practical.pdf %})
 6. Number crunching using `NumPy`/`SciPy`
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/06-NumpyScipy.pdf %})
     * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/06-NumpyScipy-Practical.html %})

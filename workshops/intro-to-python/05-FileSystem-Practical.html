@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>String_Manipulation_Regex_Practical</title>
+<title>Files_Practical</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13080,7 +13080,6 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Ignore this code; it&#39;s only here to display the image below</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;../img/logo.jpg&quot;</span><span class="p">)</span>
 </pre></div>
@@ -13115,41 +13114,20 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-for-scientific-research">Python for scientific research<a class="anchor-link" href="#Python-for-scientific-research">&#182;</a></h1><h1 id="String-manipulation-and-regular-expression">String manipulation and regular expression<a class="anchor-link" href="#String-manipulation-and-regular-expression">&#182;</a></h1><h3 id="Bram-Kuijper">Bram Kuijper<a class="anchor-link" href="#Bram-Kuijper">&#182;</a></h3><h3 id="University-of-Exeter,-Penryn-Campus,-UK">University of Exeter, Penryn Campus, UK<a class="anchor-link" href="#University-of-Exeter,-Penryn-Campus,-UK">&#182;</a></h3><h3 id="February-2020">February 2020<a class="anchor-link" href="#February-2020">&#182;</a></h3>
+<h1 id="Python-for-scientific-research">Python for scientific research<a class="anchor-link" href="#Python-for-scientific-research">&#182;</a></h1><h1 id="Working-with-files-and-filesystems-(file-IO)">Working with files and filesystems (file IO)<a class="anchor-link" href="#Working-with-files-and-filesystems-(file-IO)">&#182;</a></h1><h3 id="Bram-Kuijper">Bram Kuijper<a class="anchor-link" href="#Bram-Kuijper">&#182;</a></h3><h3 id="University-of-Exeter,-Penryn-Campus,-UK">University of Exeter, Penryn Campus, UK<a class="anchor-link" href="#University-of-Exeter,-Penryn-Campus,-UK">&#182;</a></h3><h3 id="February-2020">February 2020<a class="anchor-link" href="#February-2020">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="String-manipulation">String manipulation<a class="anchor-link" href="#String-manipulation">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="String-escape-sequences">String escape sequences<a class="anchor-link" href="#String-escape-sequences">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To add newlines and other special characters to our text we can use a range of <a href="https://docs.python.org/3/reference/lexical_analysis.html#grammar-token-stringescapeseq">escape sequences</a>. The most important ones are</p>
+<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>Each file has three properties</p>
 <ul>
-<li><code>'\n'</code>: newline</li>
-<li><code>'\t'</code>: tab</li>
-<li><code>'\"'</code>: <code>"</code> (double quotes)</li>
-<li><code>'\''</code>: <code>'</code> (single quotes)</li>
-<li><code>'\xhh'</code>: character with hex value <code>hh</code>
-When one interfaces with online databases or text files (think of a tab-separated csv file, for example), an understanding of these escape characters becomes essential.</li>
+<li><strong>Filename</strong>: The name of the file</li>
+<li><strong>Path</strong>: The location of the file on the computer</li>
+<li><strong>Contents</strong>: The contents of the file</li>
 </ul>
-<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>Write a single-quoted byte string (i.e., <code>b'..'</code>) and print it to the screen using its member function <a href="https://docs.python.org/3/library/stdtypes.html?highlight=byte%20decode#bytes.decode"><code>bytes.decode()</code></a>. The resulting message should be:</p>
-<p><code>Bob told the PI:  
-        "That complicated data 'pipeline'? She automated that already, using Python.
-        She is now 'working remotely' from a château near Saint-Raphaël in France."</code></p>
-<p>Hint: for the international characters, use the hexadecimal codes from the online <a href="http://www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=%C3%A2&amp;mode=char">UTF-8 tool</a></p>
+<p>In the current practical we aim to manipulate all three</p>
 
 </div>
 </div>
@@ -13157,36 +13135,7 @@ When one interfaces with online databases or text files (think of a tab-separate
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="String-methods">String methods<a class="anchor-link" href="#String-methods">&#182;</a></h2><p>Python has a number of <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">string methods</a> to manipulate text. A number of important ones are (optional arguments are ommitted, but links are provided to the official documentation):</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Function name</th>
-<th style="text-align:left">What does it do?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><a href="https://docs.python.org/3/library/stdtypes.html#str.count"><code>str.count(sub)</code></a></td>
-<td style="text-align:left">Total number of non-overlapping occurrences of substring <code>sub</code> in <code>str</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://docs.python.org/3/library/stdtypes.html#str.find"><code>str.find(sub)</code></a></td>
-<td style="text-align:left">Finds the leftmost occurrence of substring <code>sub</code> in <code>str</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://docs.python.org/3/library/stdtypes.html#str.join"><code>str.join(iterable)</code></a></td>
-<td style="text-align:left">Concatenates elements in <code>iterable</code> using the concatenation string <code>str</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://docs.python.org/3/library/stdtypes.html#str.strip"><code>str.strip()</code> </a></td>
-<td style="text-align:left">Strips whitespace from both sides of <code>str</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://docs.python.org/3/library/stdtypes.html#str.split"><code>str.split(sep)</code> </a></td>
-<td style="text-align:left">Splits a string into a list of substrings, using separator string <code>sep</code></td>
-</tr>
-</tbody>
-</table>
+<h1 id="Information-about-the-file-system">Information about the file system<a class="anchor-link" href="#Information-about-the-file-system">&#182;</a></h1><p>As seen in the lectures, information about files and directories can be read using the <a href="https://docs.python.org/3/library/os.path.html#module-os.path"><code>os.path</code></a> module.</p>
 
 </div>
 </div>
@@ -13194,410 +13143,15 @@ When one interfaces with online databases or text files (think of a tab-separate
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><ol>
-<li>Write a function that randomly samples 20 items from a <code>list</code> of values, where each value is either a number between 1 and 10 or a whitespace. The function returns a <code>str</code> object of a single line containing all values, separated by commas, for example:</li>
-</ol>
-<p><code>5,10,1,9,8,6,8,4,4,6, ,9,6,1,2,2,10,5,1,</code></p>
-<p>Use the <a href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.random.choice.html#numpy.random.choice"><code>numpy.random.sample()</code></a> function from the <code>numpy.random</code> library to randomly sample <code>size=20</code> values from a <code>list</code> object.</p>
+<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>Go to the <a href="https://docs.python.org/3/library/os.path.html#module-os.path"><code>os.path</code></a> page and read through the various methods available.</p>
 <ol>
-<li>Write a second function, which takes the comma-separated string that you just generated as an argument. The function then counts the number of occurrences of each number or a whitespace in the string. The function should print a string that gives a value (i.e., a number or a whitespace) and the number of times this value was counted. Values that were not encountered in the string should have a count of 0.</li>
-</ol>
-<p><strong>Hint </strong> There are different ways of counting occurrences of all characters in a text. Typically using a dictionary is the most efficient.</p>
-<p>For the example string <code>5,10,1,9,8,6,8,4,4,6, ,9,6,1,2,2,10,5,1,</code> above, the output should be:<br>
-<code>Value 1 occurred 3 times.</code><br>
-<code>Value 2 occurred 2 times.</code><br>
-<code>Value 3 occurred 0 times.</code><br>
-<code>Value 4 occurred 2 times.</code><br>
-<code>Value 5 occurred 2 times.</code><br>
-<code>Value 6 occurred 3 times.</code><br>
-<code>Value 7 occurred 0 times.</code><br>
-<code>Value 8 occurred 2 times.</code><br>
-<code>Value 9 occurred 2 times.</code><br>
-<code>Value 10 occurred 2 times.</code><br>
-<code>Value   occurred 2 times.</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Regular-Expressions">Regular Expressions<a class="anchor-link" href="#Regular-Expressions">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To work with regular expressions (regexes) we need to import the <code>re</code> package:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Some-of-the-key-functions-to-find-and-replace-regex-patterns">Some of the key functions to find and replace regex patterns<a class="anchor-link" href="#Some-of-the-key-functions-to-find-and-replace-regex-patterns">&#182;</a></h3><p>The functions below are the ones most often used to find matching patterns. Clicking on the function names should take you to the corresponding Python documentation.</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Function name</th>
-<th style="text-align:left">What does it do?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><a href="https://docs.python.org/3/library/re.html?highlight=re%20search#re.compile"><code>re.compile()</code></a></td>
-<td style="text-align:left">Compiles a regular expression before using it. Avoid unless you use the same regex 1000s of times</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://docs.python.org/3/library/re.html?highlight=re%20search#re.findall"><code>re.findall()</code></a></td>
-<td style="text-align:left">Finds all non-overlapping matches of a pattern in a string and returns a list containing all matches</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://docs.python.org/3/library/re.html?highlight=re%20search#re.Pattern.search"><code>re.search()</code></a></td>
-<td style="text-align:left">Finds the first occurrence of a pattern in a string and returns a <a href="https://docs.python.org/3/library/re.html?highlight=re%20search#match-objects">MatchObject</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://docs.python.org/3/library/re.html?highlight=re%20search#re.sub"><code>re.sub()</code></a></td>
-<td style="text-align:left">Replaces a matching pattern with a replacement string</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Symbols-to-define-character-classes-and-escape-sequences">Symbols to define character classes and escape sequences<a class="anchor-link" href="#Symbols-to-define-character-classes-and-escape-sequences">&#182;</a></h3><p>Regexes are built on the principle that the character <code>'f'</code> matches occurrences of that character <code>'f'</code> in string. However, one often needs to match patterns that can include large numbers of potential characters. To facilitate this, Python <code>regex</code>es include symbols that reflect particular character classes...</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Symbol</th>
-<th style="text-align:left">Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>.</code></td>
-<td style="text-align:left">Matches any character</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>[abc]</code></td>
-<td style="text-align:left">Matches any of the characters <code>'a'</code>, <code>'b'</code> or <code>'c'</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>[^abc]</code></td>
-<td style="text-align:left">Matches anything but the characters <code>'a'</code>, <code>'b'</code> or <code>'c'</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>[a-z]</code></td>
-<td style="text-align:left">Matches a range of characters (in this case all lowercase characters)</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>^a</code></td>
-<td style="text-align:left">Matches the character <code>'a'</code> at the start of the string</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>a$</code></td>
-<td style="text-align:left">Matches the character <code>'a'</code> at the end of the string</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>a|b</code></td>
-<td style="text-align:left">Matches character <code>'a'</code> or character <code>'b'</code></td>
-</tr>
-</tbody>
-</table>
-<p>.. and escape sequences:</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Escape character</th>
-<th style="text-align:left">Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>\d</code></td>
-<td style="text-align:left">Matches any decimal digit; this is equivalent to the class <code>[0-9]</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\D</code></td>
-<td style="text-align:left">Matches any non-digit character; this is equivalent to the class <code>[^0-9]</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\s</code></td>
-<td style="text-align:left">Matches any whitespace character; this is equivalent to the class <code>[ \t\n\r\f\v]</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\S</code></td>
-<td style="text-align:left">Matches any non-whitespace character; this is equivalent to the class <code>[^ \t\n\r\f\v]</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\w</code></td>
-<td style="text-align:left">Matches any alphanumeric character; this is equivalent to the class <code>[a-zA-Z0-9_]</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\W</code></td>
-<td style="text-align:left">Matches any non-alphanumeric character; this is equivalent to the class <code>[^a-zA-Z0-9_]</code></td>
-</tr>
-</tbody>
-</table>
-<p>If you want to actually match a backslash <code>\</code> or another protected regular expression character such as <code>[</code>, you can match them by <em>escaping</em> these characters: i.e., by writing <code>\\</code> and <code>\[</code> respectively.</p>
-<h3 id="Note:">Note:<a class="anchor-link" href="#Note:">&#182;</a></h3><p>As we do not want Python to substitute any backslashes for characters, regular expressions always require <strong>raw strings</strong>, i.e., <code>r"..."</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example:-searching-for-a-backslash">Example: searching for a backslash<a class="anchor-link" href="#Example:-searching-for-a-backslash">&#182;</a></h3><p>Find a backslash in a string. Set up two example strings, one that contains the backslash, one which does not:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-
-<span class="c1"># the two examples</span>
-<span class="n">str_with_backslash</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;did you see that backslash \ somewhere?&quot;</span>
-<span class="n">str_without_backslash</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;No it&#39;s gone...&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">str_with_backslash</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">str_without_backslash</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>did you see that backslash \ somewhere?
-No it&#39;s gone...
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-continued:-searching-for-a-backslash-using-match-objects">Example continued: searching for a backslash using match objects<a class="anchor-link" href="#Example-continued:-searching-for-a-backslash-using-match-objects">&#182;</a></h3><p>Now use the function <code>re.search()</code> to search for the backslash within <code>str_with_backslash</code>. If successful, <code>re.search()</code> returns a <a href="https://docs.python.org/3/library/re.html?highlight=re%20search#match-objects">match object</a>, which contains the matched substrings.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Search for a backslash, by simply escaping a backslash:</span>
-<span class="n">result_backslash</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">str_with_backslash</span><span class="p">)</span> 
-
-<span class="nb">print</span><span class="p">(</span><span class="n">result_backslash</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;re.Match object; span=(27, 28), match=&#39;\\&#39;&gt;
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If <code>re.search()</code> is not successful, it returns <code>None</code>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result_no_backslash</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">str_without_backslash</span><span class="p">)</span> 
-
-<span class="nb">print</span><span class="p">(</span><span class="n">result_no_backslash</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>None
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The match object <code>result_backslash</code> has the method <code>Match.group(0)</code> to retrieve the value of the first (and in this case, only) match.<br>
-We can use the method <code>Match.span()</code> to find the (start,end) positions <em>where</em> the pattern matches:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># the matched substring (in this case just a slash)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result_backslash</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> 
-
-<span class="c1"># (start, end) position</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result_backslash</span><span class="o">.</span><span class="n">span</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>\
-(27, 28)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h2><ol>
-<li>Write a function that uses a regular expression to check whether a lowercase string is a DNA sequence: i.e., it only contains the 4 nucleotides 'c', 'g', 'a', 't'</li>
-<li>Test the function: generate a list with strings and call the function repeatedly within a <code>for</code> loop. If the current string (say, <code>'cccggcgggg'</code> is indeed a sequence, the text <code>'The sequence 'cccggcgggg' is a sequence'</code> should appear. Whereas if the current string is not a sequence, the text <code>The sequence 'cccbcgggg' is not a sequence'</code> should appear.</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Regular-expression-character-classes-and-repetition">Regular expression character classes and repetition<a class="anchor-link" href="#Regular-expression-character-classes-and-repetition">&#182;</a></h3><p>Next, we introduce a number of modifiers that allow you to change the number of occurrences of a pattern that need to be matched:</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Repetition modifier</th>
-<th style="text-align:left">Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>a{1,4}</code></td>
-<td style="text-align:left">Matches <code>'a'</code> when it occurs in groups of 1 to 4</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>a{1,4}?</code></td>
-<td style="text-align:left">Matches <code>'a'</code> when it occurs in groups of 1 to 4, with as few repetitions as possible</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>a*</code></td>
-<td style="text-align:left">Matches <code>'a'</code> any number of times (including no match at all)</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>a+</code></td>
-<td style="text-align:left">Matches <code>'a'</code> one or more times</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>a?</code></td>
-<td style="text-align:left">Matches <code>'a'</code> zero or one times</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-4">Exercise 4<a class="anchor-link" href="#Exercise-4">&#182;</a></h2><ol>
-<li><p>Try to match all characters but the first two and the last two in the string <code>'?:SADF005A3WERB1Fdk95fjdkjerij@!'</code> (note that the quotation marks <code>'</code> indicate that it is a string and need not be matched). You can either use <a href="https://regex101.com/">regex101</a> or your spyder IDE. In the latter case, use the function <code>re.search()</code> to return a <code>match object</code> that is contained in the variable <code>m_obj</code>.</p>
-</li>
-<li><p>If you used spyder: how many characters does your <code>m_obj.group(0)</code> contain? If only one, what modifier do you need to add to the regular expression to change this into a match that contains the complete <code>SADF005A3WERB1Fdk95fjdkjerij</code> string? If you have used <a href="https://regex101.com/">regex101</a>, make sure that you also obtain only have 1 match, rather than many matches.</p>
+<li>Find three functions within the <a href="https://docs.python.org/3/library/os.path.html#module-os.path"><code>os.path</code></a> module that seem useful to you. Describe their actions in your own words.</li>
+<li>The <a href="https://docs.python.org/3/reference/import.html?highlight=__file__#__file__"><code>__file__</code></a> variable contains the filename of the current python script. Write a function that is called <code>current_file_info()</code> which returns a dictionary containing:<ul>
+<li>the directory name in which your script resides (the path should be 'absolute', i.e., contain the complete path from the root of the disk upwards, such as: <code>"C:\\foo\\bar\\script.py"</code>)</li>
+<li>the basename (i.e., <code>script.py</code> without the top-level directory</li>
+<li>the extension of the script (if it is <code>script.py</code> it should give <code>.py</code>)</li>
+<li>the creation time of the file (in seconds since January 1, 1970, 00:00:00 -- this sounds more difficult than it actually is)</li>
+</ul>
 </li>
 </ol>
 
@@ -13607,51 +13161,49 @@ We can use the method <code>Match.span()</code> to find the (start,end) position
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Grouping-and-remembering">Grouping and remembering<a class="anchor-link" href="#Grouping-and-remembering">&#182;</a></h2><p>When we want to replace pattern matches with another string in the function <a href="https://docs.python.org/3/library/re.html?highlight=re%20sub#re.sub"><code>re.sub()</code></a>, it can useful to be able to remember the patterns that we matched. A case in point are multiple dates, each in format <code>dd-mm-yyyy</code> that need to be replaced by dates in the format <code>yyyy.mm.dd</code>. In this case, it would be handy to be able to remember the year, month and day part of each match, so that we can simply swap the matched pattern around.</p>
-<p>To remember matches, we use grouping: i.e., we use parentheses <code>()</code> to create groups of patterns. For example, if we want to remember a sequence of exactly four digits representing a year we simply write <code>(\d{4,4})</code> rather than <code>\d{4,4}</code>. When we replace this pattern by some other text, we can remember this group by using the number of the group preceded by a backslash (e.g., <code>\1</code>,<code>\2</code>).</p>
-<h3 id="Grouping-and-remembering:-example">Grouping and remembering: example<a class="anchor-link" href="#Grouping-and-remembering:-example">&#182;</a></h3><p>To illustrate grouping, let's look at an example: say we have the following list of unique identifiers corresponding to individuals in a medical database:<br>
-<code>id4819;id3019;id4019;id1020;</code></p>
-<p>The database admin messed up his scripts, however, as the last two digits of each id should, in fact, precede the first two digits. For the first id, the correct code should have been <code>id1948</code> rather than <code>id4819</code>. Regex to the rescue?</p>
-<h3 id="Grouping-and-remembering:-solution">Grouping and remembering: solution<a class="anchor-link" href="#Grouping-and-remembering:-solution">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">idstr</span><span class="o">=</span><span class="s2">&quot;id4819;id3019;id4019;id1020;&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;(\d{2,2})(\d{2,2})&quot;</span><span class="p">,</span><span class="n">repl</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;\2\1&quot;</span><span class="p">,</span><span class="n">string</span><span class="o">=</span><span class="n">idstr</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>id1948;id1930;id1940;id2010;
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>By using parentheses to group the two 2-digit patterns <code>(\d{2,2})(\d{2,2})</code> and subsequently replacing the order of the found groups <code>"\2\1"</code> we can easily switch the order of the two groups of numbers.</p>
+<h1 id="Accesssing-file-contents-using-file-objects">Accesssing file contents using file objects<a class="anchor-link" href="#Accesssing-file-contents-using-file-objects">&#182;</a></h1><p>Once a file is opened using the <a href="https://docs.python.org/3/library/functions.html?highlight=open#open"><code>open()</code></a> function, it is returned as a file object. These file objects are defined in python's <a href="https://docs.python.org/3/library/io.html#module-io"><code>io</code></a> module (io stands for 'input, output') which specifies all sorts of tools for working with so-called 'streams' of data (files, keyboard input, memory storage, etc). The <a href="https://docs.python.org/3/library/io.html#module-io"><code>io</code></a> module is automatically included in any python script (i.e., no need for an <code>import</code> statement).</p>
+<p>Most file objects you will ever be working with are so-called <a href="https://docs.python.org/3/library/io.html#io.TextIOBase"><code>io.TextIOBase</code></a> objects. Other types of IO objects exist as well but are not often used. Any <a href="https://docs.python.org/3/library/io.html#io.TextIOBase"><code>io.TextIOBase</code></a> object has access to a bunch of methods. In case we have an example file object called <code>f</code>, some of most commonly used file object methods and properties are:</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Method</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/io.html#io.IOBase.close"><code>f.close()</code></a></td>
+<td style="text-align:left">Closes the file object <code>f</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/io.html#io.IOBase.closed"><code>f.closed</code></a></td>
+<td style="text-align:left"><code>bool</code> property indicating status of file object. If <code>f</code> is closed, value is <code>True</code>, if <code>f</code> is open, value is <code>False</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/io.html#io.IOBase.readlines"><code>f.readlines()</code></a></td>
+<td style="text-align:left">Returns a list with <code>str</code> objects, each of which is a line from the file <code>f</code> (see note below)</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/io.html#io.IOBase.seek"><code>f.seek(offset)</code></a></td>
+<td style="text-align:left">Sets the stream position <code>offset</code> (in bytes)</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/io.html#io.IOBase.tell"><code>f.tell()</code></a></td>
+<td style="text-align:left">Gives the current stream position in bytes</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/io.html#io.TextIOBase.write"><code>f.write(s)</code></a></td>
+<td style="text-align:left">Writes the string <code>s</code> to the file</td>
+</tr>
+</tbody>
+</table>
+<p><strong>note on <code>f.readlines()</code></strong>: instead of using <code>f.readlines()</code> to get the lines of a file, one can also iterate through the lines of a file by using a <code>for</code> loop on the file object, i.e., <code>for line in f:</code></p>
+<p>To make file objects, we use the <code>open(file [,mode] [,buffering])</code> function where <code>[]</code> denote optional arguments that you do not have to provide if not necessary.</p>
+<p><strong>Arguments to <code>open()</code>:</strong></p>
+<ul>
+<li><code>file</code>: the name of the file</li>
+<li><code>mode</code>: how you should access the file: write to the file or read from the file, overwrite files, etc. See table in the lecture slides</li>
+<li><code>buffering</code>: if -1 (default), python will read in files in chunks of typically 4096 bytes. If <code>buffering</code> is any positive number, say n, it reads the file into memory in chunks of n bytes, after which you can use it at will. Changing buffering settings is only needed in case reading and writing files slows down the programme substantially (i.e., when you are writing megabytes of output per second).</li>
+</ul>
 
 </div>
 </div>
@@ -13659,22 +13211,97 @@ We can use the method <code>Match.span()</code> to find the (start,end) position
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-5">Exercise 5<a class="anchor-link" href="#Exercise-5">&#182;</a></h2><ol>
-<li>Use <code>re.sub()</code> to write <code>"23.11.1980,29-12-2019,23051974"</code> as <code>"1980-11-23,2019-12-29,1974-05-23"</code></li>
-<li>Write a function that accepts a list with strings like the one below (i.e., a list of files in a directory)...  </li>
-</ol>
-<p><code>["tempfile_000","sim_evol_29_03_2015_349348329","sim_evol_29_03_2015_349348329_distribution1","sim_evol_29_03_2015_349348329_graph","sim_evol_29_03_2015_990999","sim_evol_29_03_2015_990999_distribution1","sim_evol_29_03_2015_9"]</code></p>
-<p>.. and retains only the following three elements (within the function you will need to loop and filter the above list):
-<code>["sim_evol_29_03_2015_349348329","sim_evol_29_03_2015_990999","sim_evol_29_03_2015_9"]</code></p>
-<p><strong>Hint</strong>: you might want to try your pattern on <a href="https://regex101.com">regex101</a>. As a test string, use the following list below (where we removed the quotation marks and the straight brackets). We do not want to match the complete thing, rather we would like to match against each line individually, hence put each item on a separate line in the 'Test String' form (if pasting this below, you might want to delete any trailing whitespace):</p>
-<p><code>tempfile_000  
-sim_evol_29_03_2015_349348329  
-sim_evol_29_03_2015_349348329_distribution1  
-sim_evol_29_03_2015_349348329_graph  
-sim_evol_29_03_2015_990999  
-sim_evol_29_03_2015_990999_distribution1  
-sim_evol_29_03_2015_9</code></p>
-<p>PS: this is a surprisingly common task: if you want to work with large numbers of files, regexes are often the tool of choice for filtering filenames</p>
+<h2 id="Exercise-2:-battling-with-raw-data">Exercise 2: battling with raw data<a class="anchor-link" href="#Exercise-2:-battling-with-raw-data">&#182;</a></h2><p>Getting raw text files into an object that is amenable for data analysis can sometimes be a tedious task. For most comma separated files, the function <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html#pandas.read_csv"><code>pandas.read_csv()</code></a> from the <a href="https://pandas.pydata.org/">pandas</a> library does the job. However, in many other cases, the raw data contains descriptions, whitespace, irregular columns and other nuisances which means some preprocessing is necessary. Here we focus on such a case:</p>
+<h3 id="Exercise-2.1">Exercise 2.1<a class="anchor-link" href="#Exercise-2.1">&#182;</a></h3><p>Inspect the <a href="https://www.w3.org/TR/PNG/iso_8859-1.txt">iso_8859-1.txt</a> file by clicking on this <a href="https://www.w3.org/TR/PNG/iso_8859-1.txt">link</a>. Save the file somewhere on your home directory. If the file opens in another browser tab/window, press ctrl + s to save it to disk. The file contains the hexadecimal character code for the character set ISO-8859-1, but that is not important here. What we want to do is get <strong>all the hexadecimal numbers followed by their descriptions, in a single column</strong>. At the moment, however, there are sometimes one, sometimes two columns, and the whole thing is preceded by column names and a description, which need to be removed.</p>
+<h3 id="Exercise-2.2">Exercise 2.2<a class="anchor-link" href="#Exercise-2.2">&#182;</a></h3><p>To start, write a function <code>filter_hex_codes(pathname)</code> that opens the file and only returns a list of lines containing either one or two hex codes and their descriptions. The description at the start of the file, or any whitespace at the start or end of each line (not in the middle) should have been removed. Hence, the first element of the list returned by this function should be <code>['20  SPACE']</code>. The second element should be <code>['21  EXCLAMATION MARK     A1  INVERTED EXCLAMATION MARK']</code> and the last element should be <code>['FF  SMALL LETTER Y WITH DIAERESIS']</code>.</p>
+<p><strong>Hint</strong>: do not try to cram every possible pattern in a regex (although they will be needed). Look at other <a href="https://docs.python.org/3/library/stdtypes.html?highlight=str%20split#string-methods">text processing functions</a> with which you can reduce the complexity of the problem</p>
+<h3 id="Exercise-2.3">Exercise 2.3<a class="anchor-link" href="#Exercise-2.3">&#182;</a></h3><p>Make another function that accepts the list returned by <code>filter_hex_codes(pathname)</code> and prints the two columns of<br>
+<code>hex code  character description      hex code  character description</code><br>
+as a single <code>;</code>-separated list of<br>
+<code>hex code;character description</code></p>
+<p>The order of the hex code in the list is not important.</p>
+<p>A potential output could be:</p>
+<p><code>['20;SPACE',
+ '21;EXCLAMATION MARK',
+ 'A1;INVERTED EXCLAMATION MARK',
+ '22;QUOTATION MARK',
+ 'A2;CENT SIGN',
+ '23;NUMBER SIGN',
+ 'A3;POUND SIGN',
+ ...
+ '7E;TILDE',
+ 'FE;SMALL LETTER THORN (Icelandic)',
+ 'FF;SMALL LETTER Y WITH DIAERESIS']</code></p>
+<p><strong>Hint:</strong> check out <code>re.split()</code> if you want to split a line based on a slightly more complicated pattern than possible with <code>str.split()</code></p>
+<h3 id="Exercise-2.4">Exercise 2.4<a class="anchor-link" href="#Exercise-2.4">&#182;</a></h3><p>Write the contents to a file <code>iso_8859-1-single-columnn.txt</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Working-with-files-and-directories">Working with files and directories<a class="anchor-link" href="#Working-with-files-and-directories">&#182;</a></h1><p>Whereas the <a href="https://docs.python.org/3/library/os.path.html#module-os.path"><code>os.path</code></a> module allows you to get information about files and the directory structure, the <a href="https://docs.python.org/3/library/os.html#files-and-directories"><code>os</code></a> module allows you to directly work with those files.</p>
+<p>Some key methods in the <a href="https://docs.python.org/3/library/os.html#files-and-directories"><code>os</code></a> module are:</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Function</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/os.html#os.chdir"><code>os.chdir(path)</code></a></td>
+<td style="text-align:left">Change the current working directory to <code>path</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/os.html#os.getcwd"><code>os.getcwd()</code></a></td>
+<td style="text-align:left">Get the path name of the current working directory</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/os.html#os.rmdir"><code>os.rmdir(path)</code></a></td>
+<td style="text-align:left">Remove the directory <code>path</code> (only when empty; otherwise use <a href="https://docs.python.org/3/library/shutil.html#shutil.rmtree"><code>shutil.rmtree()</code></a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/os.html#os.listdir"><code>os.listdir(path)</code></a></td>
+<td style="text-align:left">List all files in the directory <code>path</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.python.org/3/library/os.html#os.walk"><code>os.walk(path)</code></a></td>
+<td style="text-align:left">Lists all subdirectories and files in <code>path</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h2><p>Bringing data together from multiple files is another task for which Python is commonly used. Here we work on a directory containing a range of different files and try to combine data</p>
+<h3 id="Exercise-3.1">Exercise 3.1<a class="anchor-link" href="#Exercise-3.1">&#182;</a></h3><p>Download and unpack the zip file in the following <a href="https://github.com/bramkuijper/stress/raw/master/figs/compare_dp/some_data.zip">link</a>, which contain a number of simulation files from a github site. Move the unpacked directory to a folder somewhere in your home directory (we are not going to delete anything, so no worries) and inspect the directory structure.</p>
+<p>The folder contains different files distributed over a number of subdirectories. Using notepad to open a file may be less than helpful, but one can always use the menu option <code>File</code>&gt;<code>Open</code> in Spyder to inspect a raw data file. Just make sure that the <code>All files</code> option is selected in the <code>Select file</code> dialog.</p>
+<h3 id="Exercise-3.2">Exercise 3.2<a class="anchor-link" href="#Exercise-3.2">&#182;</a></h3><p>Write a function <code>files_matching_regex(pattern, path)</code> which uses the <a href="https://docs.python.org/3/library/os.html#os.walk"><code>os.walk()</code></a> function to loop over all files in the unpacked zip file above. It returns a list with the complete pathnames of those files which match to a certain regular expression given by <code>pattern</code>. The location of the top-level directory containing the data should be provided by the keyword argument <code>path</code>.</p>
+<p>Then test the function and (i) specify a pattern which matches all the files ending on <code>.csv</code> and (ii) another pattern that matches all the files containing <code>02_2020</code> but are neither preceded by <code>graph</code> nor end on <code>*_iters.csv</code></p>
+<h3 id="Exercise-3.3">Exercise 3.3<a class="anchor-link" href="#Exercise-3.3">&#182;</a></h3><p>Now write another function <code>match_line(path, pattern)</code> that opens a file given by keyword argument <code>path</code> and which returns the first line matching the keyword argument <code>pattern</code>. Now use this function in combination with the <code>files_matching_regex(pattern, path)</code> function above to get a list of all the lines starting with <code>sP2NP</code> from all files starting with <code>sim</code> and ending on the digits <code>1</code>, <code>3</code> and <code>5</code>. The listing should be (not necessarily in this order):</p>
+<p><code>['sP2NP_1;0.19;', 'sP2NP_1;0.19;', 'sP2NP_1;0.5;', 'sP2NP_1;0.89;']</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Final-words:-caution-needed-when-working-with-files">Final words: caution needed when working with files<a class="anchor-link" href="#Final-words:-caution-needed-when-working-with-files">&#182;</a></h2><p>For many scientists, Python is an essential tool when working with large numbers of files. However, careless use can do a <em>lot</em> of damage. Python does not make backups so when a file or directory is gone, it's gone. One would not be the first to erroneously delete months of painstakingly collected data in a millisecond by using the wrong file opening mode, such as here: <code>f = open(file="my_precious_fieldwork_database.mdb",mode="w")</code> (remember: <code>mode="w"</code> means truncation (deleting all the file's contents), only after which data will be written to the file).</p>
+<p>Another howler is a careless use of <a href="https://docs.python.org/3/library/shutil.html?highlight=rmtree#shutil.rmtree"><code>shutil.rmtree(path=".")</code></a> with a relative pathname (here: <code>"."</code>), whilst forgetting that your current working directory is still your home directory (or better: the root directory of your lab's backup drive ⁀⊙﹏☉⁀). Do not count on Python to give you any warnings or to make backups for you while it gladly reduces all your lab's sequencing data to 0 bytes.</p>
+<h3 id="Key-actions-to-reduce-costly-mistakes-when-working-with-the-file-system">Key actions to reduce costly mistakes when working with the file system<a class="anchor-link" href="#Key-actions-to-reduce-costly-mistakes-when-working-with-the-file-system">&#182;</a></h3><ul>
+<li>Make frequent backups</li>
+<li>Do not run python scripts as root</li>
+<li>Ask yourself whether a problem can be solved in a different way than by deleting whole directory trees</li>
+<li>Avoid the use of relative paths (i.e., paths relative to the current directory, such as <code>"."</code>, <code>"../../foo/my_file.txt"</code>) in favour of more precise absolute paths (e.g., <code>"C:\Users\foo132\Desktop\data\my_file.txt"</code>)</li>
+<li>Try to make use of version control systems to store manuscripts, mission-critical data and code (e.g., <a href="https://github.com">github</a> or <a href="https://bitbucket.org">bitbucket</a>)</li>
+</ul>
 
 </div>
 </div>
