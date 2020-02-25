@@ -53,7 +53,7 @@ Slides from previous years are shown for upcoming lectures.
     * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/04-TextManipulation-Practical.html %})
 5. File system
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/05-FileSystem.pdf %})
-    * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/05-FileSystem-Practical.pdf %})
+    * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/05-FileSystem-Practical.html %})
 6. Number crunching using `NumPy`/`SciPy`
     * [Slides]({{ site.baseurl }}{% link workshops/intro-to-python/06-NumpyScipy.pdf %})
     * [Practical]({{ site.baseurl }}{% link workshops/intro-to-python/06-NumpyScipy-Practical.html %})
