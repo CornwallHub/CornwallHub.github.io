@@ -4,23 +4,29 @@ layout: default
 
 # Python for scientific research
 
-## Course dates 2020
+## Provisional course dates September 2020
 
-1. Tue February 4 
-- 0900 - 1100, room: DDM IT/3.037
-- 1300 - 1600, room: DDM IT/3.037
-2. Tue February 11
-- 1100 - 1400, room: DDM IT/1.033
-- 1500 - 1800, room: DDM IT/3.037
-3. Tue February 25
+1. Thursday 3 September 
 - 0900 - 1200, room: DDM IT/3.037
-4. Tue March 3 ~~Tue March 25~~
-- 1100 - 1400, room: DDM IT/1.033
+- 1300 - 1600, room: DDM IT/3.037
 
-(DDM: Daphne du Maurier building)
+2. Wednesday 9 September
+- 0900 - 1200, room: DDM IT/3.037
+- 1300 - 1600, room: DDM IT/3.037
+
+3. Wednesday 16 September
+- 0900 - 1200, room: DDM IT/3.037
+- 1300 - 1600, room: DDM IT/3.037
+
+4. Wednesday 23 September (no computers available, bring your own laptop!)
+- 0900 - 1200, room: ESI Richard Trevethick room
+- 1300 - 1600, room: ESI Richard Trevethick room
+
+DDM: Daphne du Maurier building, ESI: Environment & Sustainability Institute. 
+Both buildings are located at the Penryn Campus in Penryn, Cornwall
 
 ## Registration
-Register for the course on [Trent](http://www.exeter.ac.uk/staff/development/coursedetail/?code=80086) (for staff) or [My Career Zone](https://mycareerzone.exeter.ac.uk/students/events/Detail/686239) (Postgraduate students). 
+Links for registration will follow shortly
 
 ## Questions about the course
 
@@ -33,7 +39,9 @@ Contact Bram, a dot l dot w dot kuijper at exeter dot ac dot uk
 
 ## Lecture slides
 
-Slides from previous years are shown for upcoming lectures. 
+Slides from previous years are shown for upcoming lectures
+
+When using a mac, use another pdf reader than preview, as an 7-year-old [bug](https://discussions.apple.com/thread/5192605) interpreting hashtags in preview breaks all the links :-/
 
 0. [Introduction]({{ site.baseurl }}{% link workshops/intro-to-python/00-Introduction.pdf %})
 1. Built-in data types
