@@ -4,29 +4,37 @@ layout: default
 
 # Python for scientific research
 
-## Provisional course dates September 2020
+## Course dates September 2020
+Sessions 1-3 will be held in the IT Training suite 1.031, in the 
+Daphne du Maurier (DDM) building on the Penryn Campus. You can reach 
+room 1.031 by going to the library in the Exchange building and following
+the direction 'IT Suites'. 
+
+Session 4 will be held in the Richard Trevethick room, on the ground
+floor of the the Environment and Sustainability Insitute, 
+also located on the Penryn Campus.
+
 
 1. Thursday 3 September 
-- 0900 - 1200, room: DDM IT/3.037
-- 1300 - 1600, room: DDM IT/3.037
+- 0900 - 1200, room: DDM IT/1.031
+- 1300 - 1600, room: DDM IT/1.031
 
 2. Wednesday 9 September
-- 0900 - 1200, room: DDM IT/3.037
-- 1300 - 1600, room: DDM IT/3.037
+- 0900 - 1200, room: DDM IT/1.031
+- 1300 - 1600, room: DDM IT/1.031
 
 3. Wednesday 16 September
-- 0900 - 1200, room: DDM IT/3.037
-- 1300 - 1600, room: DDM IT/3.037
+- 0900 - 1200, room: DDM IT/1.031
+- 1300 - 1600, room: DDM IT/1.031
 
-4. Wednesday 23 September (no computers available, bring your own laptop!)
+4. Wednesday 23 September (no computers available, so bring your own laptop!)
 - 0900 - 1200, room: ESI Richard Trevethick room
 - 1300 - 1600, room: ESI Richard Trevethick room
 
-DDM: Daphne du Maurier building, ESI: Environment & Sustainability Institute. 
-Both buildings are located at the Penryn Campus in Penryn, Cornwall
 
 ## Registration
-Links for registration will follow shortly
+Links for registration will follow shortly. If you are interested in joining, 
+send me an email so that I can email you registration information once this is available.
 
 ## Questions about the course
 
@@ -41,7 +49,7 @@ Contact Bram, a dot l dot w dot kuijper at exeter dot ac dot uk
 
 Slides from previous years are shown for upcoming lectures
 
-When using a mac, use another pdf reader than preview, as an 7-year-old [bug](https://discussions.apple.com/thread/5192605) interpreting hashtags in preview breaks all the links :-/
+On a mac, please use another pdf reader than Preview, as a 7-year-old [bug](https://discussions.apple.com/thread/5192605) interpreting hashtags in Preview breaks all the links :-/
 
 0. [Introduction]({{ site.baseurl }}{% link workshops/intro-to-python/00-Introduction.pdf %})
 1. Built-in data types
