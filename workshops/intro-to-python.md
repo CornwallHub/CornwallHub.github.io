@@ -4,37 +4,9 @@ layout: default
 
 # Python for scientific research
 
-## Course dates September 2020
-1. Thursday 3 September 
-- 0900 - 1200, room: DDM IT/1.031
-- 1300 - 1600, room: DDM IT/1.031
+## ~~Course dates September 2020~~
 
-2. Wednesday 9 September
-- 0900 - 1200, room: DDM IT/1.031
-- 1300 - 1600, room: DDM IT/1.031
-
-3. Wednesday 16 September
-- 0900 - 1200, room: DDM IT/1.031
-- 1300 - 1600, room: DDM IT/1.031
-
-4. Wednesday 23 September (no computers available, so bring your own laptop!)
-- 0900 - 1200, room: ESI Richard Trevethick room
-- 1300 - 1600, room: ESI Richard Trevethick room
-
-Sessions 1-3 will be held in the IT Training suite 1.031, located in the 
-Daphne du Maurier (DDM) building on the Penryn Campus. You can reach 
-room 1.031 by going to the library in the Exchange building and following
-the direction 'IT Suites'. 
-
-Session 4 will be held in the Richard Trevethick room, on the ground
-floor of the the Environment and Sustainability Insitute, 
-also located on the Penryn Campus.
-
-
-
-## Registration
-Links for registration will follow shortly. If you are interested in joining, 
-send me an email so that I can email you registration information once this is available.
+These dates have now been cancelled. I am to get the course lectures online in November/December.
 
 ## Questions about the course
 
