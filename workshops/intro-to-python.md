@@ -33,6 +33,7 @@ Contact the course organizer, [Bram Kuijper](https://biosciences.exeter.ac.uk/st
 
 * [Lutz, M. 2009. Learning Python. O’Reilly, Sebastopol, CA.](https://encore.exeter.ac.uk/iii/encore/record/C__Rb2506095)
 
+
 ## Documentation and other relevant websites
 * Official documentation: see [docs.python.org](https://docs.python.org/3/). Check out their [Introductory tutorial](https://docs.python.org/3/tutorial/index.html)
 * To test your own regular expressions, use [regex101.com](https://regex101.com). Regular expressions are the subject of some [comics](https://xkcd.com/208/) too...
