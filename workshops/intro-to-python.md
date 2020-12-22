@@ -35,8 +35,6 @@ An extensive list of introductory books can be found [here](https://wiki.python.
 * [Lutz, M. 2009. Learning Python. O’Reilly, Sebastopol, CA.](https://encore.exeter.ac.uk/iii/encore/record/C__Rb2506095)
 
 
-
-
 ## Documentation and other relevant websites
 * Official documentation: see [docs.python.org](https://docs.python.org/3/). Check out their [Introductory tutorial](https://docs.python.org/3/tutorial/index.html)
 * To test your own regular expressions, use [regex101.com](https://regex101.com). Regular expressions are the subject of some [comics](https://xkcd.com/208/) too...
@@ -44,9 +42,9 @@ An extensive list of introductory books can be found [here](https://wiki.python.
 
 ## Lecture slides
 
-Slides from previous years are shown for upcoming lectures. This material was originally developed by the late and great JJ Valletta. 
+A large part of this material has been developed by the late and great [JJ Valletta](https://www.gigrower.co.uk/2020/10/30/remembering-jj-valletta-1983-2020/). 
 
-On a mac, please use another pdf reader than Preview, as a 7-year-old [bug](https://discussions.apple.com/thread/5192605) interpreting hashtags in Preview breaks all the links :-/
+On a mac, please use another pdf reader than Preview, as a 7-year-old [bug](https://discussions.apple.com/thread/5192605) interpreting hashtags in Preview breaks all the hyperlinks in the slides.
 
 0. [Introduction]({{ site.baseurl }}{% link workshops/intro-to-python/00-Introduction.pdf %})
 1. Built-in data types
