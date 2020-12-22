@@ -40,6 +40,11 @@ An extensive list of introductory books can be found [here](https://wiki.python.
 * To test your own regular expressions, use [regex101.com](https://regex101.com). Regular expressions are the subject of some [comics](https://xkcd.com/208/) too...
 * More about the Spyder IDE, see [docs.spyder-ide.org/](https://docs.spyder-ide.org/). Using shortcuts to define [code cells](https://docs.spyder-ide.org/editor.html#defining-code-cells) is quite handy too 
 
+## Installing Python 
+The course focuses on Python 3. While there are a variety of Python distributions available, we will be using the individual edition of the  [https://www.anaconda.com/products/individual](Anaconda distribution) 
+
+If you want to find more information about how to install Anaconda on your computer, various tutorials are available on youtube, either for [https://www.youtube.com/watch?v=5mDYijMfSzs](windows) or [https://www.youtube.com/watch?v=V6ZAv7hBH6Y](mac).  
+
 ## Lecture slides
 
 A large part of this material has been developed by the late and great [JJ Valletta](https://www.gigrower.co.uk/2020/10/30/remembering-jj-valletta-1983-2020/). 
