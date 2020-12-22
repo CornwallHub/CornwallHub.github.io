@@ -16,7 +16,8 @@ In case you are stuck, you can always e-mail in and book an online meeting with 
 
 Contact the course organizer, [Bram Kuijper](https://biosciences.exeter.ac.uk/staff/profile/index.php?web_id=Bram_Kuijper) 
 
-## Books for self-study
+## Some books for self-study
+An extensive list of introductory books can be found [here](https://wiki.python.org/moin/IntroductoryBooks).
 
 ### Freely available
 
@@ -32,6 +33,8 @@ Contact the course organizer, [Bram Kuijper](https://biosciences.exeter.ac.uk/st
 * [Hill, C. 2020. Learning Scientific Programming with Python, 2 ed. Cambridge University Press, Cambridge.](https://encore.exeter.ac.uk/iii/encore/record/C__Rb4338235) 
 
 * [Lutz, M. 2009. Learning Python. O’Reilly, Sebastopol, CA.](https://encore.exeter.ac.uk/iii/encore/record/C__Rb2506095)
+
+
 
 
 ## Documentation and other relevant websites
